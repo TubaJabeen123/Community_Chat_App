@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Chat App</title>
+    <link rel="stylesheet" href="css/chat2.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="window-wrapper">
+      <div class="window-title">
+        <div class="dots">
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
+          <i class="fa fa-circle"></i>
+        </div>
+        <div class="title">
+          <span>Community Chat</span>
+        </div>
+      </div>
+      <div class="window-area">
+        <div class="conversation-list">
+          <ul>
+            <li class="item">
+              <a href="#"
+                ><i class="fa fa-list-alt"></i><span>Dashboard</span></a
+              >
+            </li>
+            <div id="room-list"></div>
+          </ul>
+          <div class="my-account">
+            <div class="image">
+              <img
+                src="/user-profile.png"
+                alt="User Avatar"
+              />
+              <i class="fa fa-circle online"></i>
+            </div>
+            <div class="name">
+              <span id="Uname"></span>
+              <i class="fa fa-angle-down"></i>
+              <span class="availability">Available</span>
+            </div>
+          </div>
+        </div>
+        <div class="chat-area">
+          <div id="title" class="title">
+            <b>Conversation title</b><i class="fa fa-search"></i>
+          </div>
+          <div id="chat-list" class="chat-list">
+            <ul id="output"></ul>
+             <div id="feedback"></div>
+          </div>
+          <div class="input-area">
+            <div id="message" class="input-wrapper">
+              <i
+                class="fa fa-smile-o"
+                id="emoji-btn"
+                style="cursor: pointer;"
+              ></i>
+              <input
+                type="text"
+                id="message-input"
+                placeholder="Type a message..."
+              />
+            </div>
+            <input type="button" id="send" value="Send" class="send-btn" />
+          </div>
+        </div>
+
+        <div class="right-tabs">
+          <ul class="tabs">
+            <li class="tab-link active" data-tab="participants">
+              <a href="#"><i class="fa fa-users"></i></a>
+            </li>
+            <li class="tab-link" data-tab="room-info">
+              <a href="#"><i class="fas fa-id-card"></i></a>
+            </li>
+            <li class="tab-link" data-tab="user-info">
+              <a href="#"><i class="fa fa-link"></i></a>
+            </li>
+          </ul>
+          <div class="tabs-container">
+            <div id="participants" class="tab-content active">
+                
+            </div>
+            <div id="room-info" class="tab-content">
+              <p><strong>Room Bio:</strong> <span id="roomBio"></span></p>
+              <p>
+                <strong>Created On:</strong>
+                <span id="roomCreationDate"></span>
+              </p>
+              <p>
+                <strong>Created By:</strong> <span id="roomCreator"></span>
+              </p>
+            </div>
+            <div id="user-info" class="tab-content">
+              <p>
+                <strong>Username:</strong> <span id="currentUserName"></span>
+              </p>
+              <p><strong>Joined On:</strong> <span id="joinDate"></span></p>
+            </div>
+          </div>
+          <!-- logout -->
+          <div class="logout">
+               <a href="/">
+                <i class="fa fa-sign-out logOut"></i>
+                </a>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div id="emojiPicker" class="emoji-picker hidden"></div>
+    <div id="notification" class="notification hidden"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@5.0.1/dist/index.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

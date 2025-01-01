@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+         <!-- Pre-Join Screen -->
+        <div id="preJoinScreen" class="prejoin-screen">
+            <h2>Welcome!</h2>
+            <div id="joinedRoomsContainer">
+                <h3>Joined:</h3>
+                <ul id="joinedRoomsList">
+
+                </ul>
+            </div>
+            <div id="otherRoomsContainer">
+                <h3>Others:</h3>
+                <ul id="otherRoomsList">
+
+                </ul>
+            </div>
+            <div class="form-container">
+                 <h3>Join a Room</h3>
+                 <input type="text" id="joinUserName" placeholder="Your Name">
+                 <input type="text" id="joinRoomName" placeholder="Room Name">
+                 <button id="joinRoomBtn">Join Room</button>
+                 <br>
+                 <h3>Create New Room</h3>
+                <input type="text" id="createUserName" placeholder="Your Name">
+                <input type="text" id="createRoomName" placeholder="Room Name">
+                <textarea id="createRoomBio" placeholder="Room Bio"></textarea>
+                <button id="createRoomBtn">Create Room</button>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
